@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nghe nhạc Hutao</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <h1>Hutao</h1>
+      </div>
+      <div>
+        <a href="/">Trang chủ</a>
+        <a href="/gallery.html">Kho ảnh</a>
+        <a href="/music.html" class="active">Nghe nhạc</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="toolbar">
+        <div>
+          <label class="muted">Tải nhạc:</label>
+          <input id="audio-input" type="file" accept="audio/*" multiple />
+          <button id="upload-audio" class="btn">Tải lên</button>
+        </div>
+        <button id="refresh-audio" class="btn secondary">Làm mới</button>
+      </div>
+
+      <div class="card player">
+        <div class="now">
+          <strong id="track-title">Chưa chọn bài</strong>
+        </div>
+        <audio id="audio" preload="metadata"></audio>
+        <input id="seek" class="range" type="range" min="0" max="100" value="0" />
+        <div class="controls">
+          <button id="prev" class="btn secondary">Prev</button>
+          <button id="play" class="btn">Play</button>
+          <button id="next" class="btn secondary">Next</button>
+          <button id="loop" class="btn secondary">Loop: Off</button>
+          <button id="shuffle" class="btn secondary">Shuffle: Off</button>
+          <span id="time" class="muted" style="margin-left:auto">00:00 / 00:00</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <strong>Danh sách phát</strong>
+          <div id="playlist" class="grid" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Nhạc được lưu tại uploads/audio trên máy bạn.
+  </footer>
+
+  <script src="/js/music.js"></script>
+</body>
+</html>
